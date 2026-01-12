@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Her Royal Choice | Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Roboto',sans-serif; background:#0e0e0e; color:#eee; line-height:1.6; }
+    header { text-align:center; padding:60px 20px; background:#111; color:#f5e9d8; }
+    header h1 { font-size:3rem; margin-bottom:10px; }
+    header p { font-size:1.2rem; margin-bottom:20px; }
+    header .btn { padding:12px 25px; margin:5px; border-radius:30px; background:#f5e9d8; color:#000; text-decoration:none; font-weight:bold; transition:.3s; }
+    header .btn:hover { background:#e1d5c4; }
+    nav { display:flex; justify-content:center; background:#000; padding:15px; position:sticky; top:0; z-index:1000; }
+    nav a { color:#eee; margin:0 20px; text-decoration:none; font-weight:bold; transition:.3s; }
+    nav a:hover, nav a.active { color:#f5e9d8; }
+    .categories { text-align:center; margin:30px 0; }
+    .category-btn { padding:10px 20px; margin:5px; border:none; border-radius:30px; background:#222; color:#eee; cursor:pointer; transition:.3s; }
+    .category-btn.active, .category-btn:hover { background:#f5e9d8; color:#000; }
+    .products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; padding:0 20px 50px; }
+    .product { background:#1a1a1a; padding:20px; border-radius:15px; text-align:center; position:relative; box-shadow:0 4px 10px rgba(0,0,0,.5); transition:.3s; }
+    .product:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,.8); }
+    .product img, .product video { width:100%; border-radius:12px; margin-bottom:10px; }
+    .product h4 { color:#f5e9d8; margin-bottom:5px; }
+    .product p { color:#ccc; margin-bottom:5px; font-size:0.95rem; }
+    .product .price { color:#d4c2a3; font-weight:bold; margin-bottom:10px; }
+    .product .btn { padding:10px 20px; border-radius:30px; background:#f5e9d8; color:#000; text-decoration:none; display:inline-block; transition:.3s; }
+    .product .btn:hover { background:#e1d5c4; color:#000; }
+    .product .badge { position:absolute; top:15px; left:15px; background:#f5e9d8; color:#000; padding:5px 10px; border-radius:5px; font-size:0.8rem; font-weight:bold; }
+    #features, #testimonials, #newsletter { padding:50px 20px; text-align:center; }
+    #features h2, #testimonials h2 { color:#f5e9d8; font-size:2rem; margin-bottom:30px; }
+    .features, .testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .feature, .testimonial { background:#1a1a1a; padding:20px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,.5); }
+    .feature i { font-size:2rem; color:#f5e9d8; margin-bottom:10px; }
+    .feature h3, .testimonial h4 { margin-bottom:10px; color:#f5e9d8; }
+    .feature p, .testimonial p { color:#ccc; font-size:0.95rem; }
+    #newsletter input { padding:12px 15px; border-radius:8px; border:none; width:250px; margin-right:10px; background:#222; color:#eee; }
+    #newsletter button { padding:12px 25px; border-radius:30px; background:#f5e9d8; border:none; font-weight:bold; cursor:pointer; }
+    #newsletter button:hover { background:#e1d5c4; }
+    footer { background:#111; color:#777; text-align:center; padding:20px; font-size:.9rem; }
+    footer .socials a { margin:0 8px; color:#777; transition:.3s; }
+    footer .socials a:hover { color:#f5e9d8; }
+    @media(max-width:768px) { .products-grid, .features, .testimonials { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Her Royal Choice</h1>
+  <p class="hero-subtitle">Luxury Hair • Wigs • Bundles • Closures • Beauty You Deserve</p>
+  <div class="hero-btns">
+    <a href="#products" class="btn">Shop Now</a>
+    <a href="#features" class="btn btn-outline">Why Choose Us</a>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="shop.html" class="active">Shop</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="categories">
+  <button class="category-btn active" data-category="all">All</button>
+  <button class="category-btn" data-category="wigs">Wigs</button>
+  <button class="category-btn" data-category="bundles">Bundles</button>
+  <button class="category-btn" data-category="closures">Closures</button>
+</section>
+
+<section id="products" class="products-grid">
+  <!-- 15 Mixed Products: Images & Videos -->
+  <div class="product" data-category="wigs">
+    <div class="badge">Best Seller</div>
+    <img src="images/IMG-20251202-WA0060.jpg" alt="Silky Straight Wig 22">
+    <h4>Silky Straight Wig 22"</h4>
+    <p><strong>Material:</strong> Brazilian Human Hair</p>
+    <p><strong>Texture:</strong> Straight</p>
+    <p><strong>Length:</strong> 22"</p>
+    <p><strong>Care:</strong> Wash weekly, air dry</p>
+    <p class="price">R950</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <video autoplay muted loop playsinline>
+      <source src="images/VID-20251202-WA0076.mp4" type="video/mp4">
+    </video>
+    <h4>Streetwear Wig Demo</h4>
+    <p>Oversized style shown in video.</p>
+    <p class="price">R2,800</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <img src="images/IMG-20251202-WA0065.jpg" alt="Malaysian Loose Curl Wig 22">
+    <h4>Malaysian Loose Curl Wig 22"</h4>
+    <p><strong>Material:</strong> Malaysian Human Hair</p>
+    <p><strong>Texture:</strong> Loose Curl</p>
+    <p><strong>Length:</strong> 22"</p>
+    <p><strong>Care:</strong> Wash gently, leave-in conditioner</p>
+    <p class="price">R1,050</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <video autoplay muted loop playsinline>
+      <source src="images/VID-20251202-WA0082.mp4" type="video/mp4">
+    </video>
+    <h4>Limited Edition Wig Video</h4>
+    <p>Exclusive design and features.</p>
+    <p class="price">R1,900</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <img src="images/IMG-20251202-WA0080.jpg" alt="Brazilian Kinky Curly 18">
+    <h4>Brazilian Kinky Curly 18"</h4>
+    <p><strong>Material:</strong> Brazilian Human Hair</p>
+    <p><strong>Texture:</strong> Kinky Curly</p>
+    <p><strong>Length:</strong> 18"</p>
+    <p><strong>Care:</strong> Moisturize curls, air dry</p>
+    <p class="price">R2,900</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <img src="images/IMG-20251202-WA0067.jpg" alt="Curly Volume Wig 20">
+    <h4>Curly Volume Wig 20"</h4>
+    <p><strong>Material:</strong> Malaysian Human Hair</p>
+    <p><strong>Texture:</strong> Curly</p>
+    <p><strong>Length:</strong> 20"</p>
+    <p><strong>Care:</strong> Use wide-tooth comb, mild shampoo</p>
+    <p class="price">R850</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="bundles">
+    <img src="images/71JxWp0c8qL._AC_.jpg" alt="Brazilian Body Wave Bundle 22">
+    <h4>Brazilian Body Wave Bundle 22"</h4>
+    <p><strong>Material:</strong> Brazilian Human Hair</p>
+    <p><strong>Texture:</strong> Body Wave</p>
+    <p><strong>Length:</strong> 22"</p>
+    <p class="price">R1,100</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="bundles">
+    <video autoplay muted loop playsinline>
+      <source src="images/VID-20251202-WA0048.mp4" type="video/mp4">
+    </video>
+    <h4>Body Wave Bundle Demo</h4>
+    <p>See volume and shine in video.</p>
+    <p class="price">R1,200</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="closures">
+    <img src="images/IMG-20251202-WA0063.jpg" alt="Lace Closure 14">
+    <h4>Lace Closure 14"</h4>
+    <p><strong>Material:</strong> Brazilian Human Hair</p>
+    <p><strong>Texture:</strong> Straight</p>
+    <p class="price">R350</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="closures">
+    <video autoplay muted loop playsinline>
+      <source src="images/VID-20251202-WA0049.mp4" type="video/mp4">
+    </video>
+    <h4>Lace Closure Demo</h4>
+    <p>Shows natural hairline effect.</p>
+    <p class="price">R400</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <img src="images/V-part-Wig.jpg" alt="Peruvian Deep Wave Wig 24">
+    <h4>Peruvian Deep Wave Wig 24"</h4>
+    <p><strong>Material:</strong> Peruvian Human Hair</p>
+    <p><strong>Texture:</strong> Deep Wave</p>
+    <p><strong>Length:</strong> 24"</p>
+    <p class="price">R1,150</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <video autoplay muted loop playsinline>
+      <source src="images/VID-20251202-WA0084.mp4" type="video/mp4">
+    </video>
+    <h4>Wig Styling Video</h4>
+    <p>Showcasing styling possibilities.</p>
+    <p class="price">R1,100</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <img src="images/91SIzbKUYsL.jpg" alt="Brazilian Straight Wig 20">
+    <h4>Brazilian Straight Wig 20"</h4>
+    <p><strong>Material:</strong> Brazilian Human Hair</p>
+    <p><strong>Texture:</strong> Straight</p>
+    <p><strong>Length:</strong> 20"</p>
+    <p class="price">R900</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="wigs">
+    <video autoplay muted loop playsinline>
+      <source src="images/VID-20251202-WA0083.mp4" type="video/mp4">
+    </video>
+    <h4>Curly Wig Demo</h4>
+    <p>Demonstrates curl bounce and shine.</p>
+    <p class="price">R3,800</p>
+    <a href="#" class="btn">Buy Now</a>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Why Choose Us</h2>
+  <div class="features">
+    <div class="feature">
+      <i class="fas fa-star"></i>
+      <h3>Premium Quality</h3>
+      <p>Top-grade human and synthetic hair for long-lasting confidence.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-smile"></i>
+      <h3>Natural Look</h3>
+      <p>Our wigs blend perfectly, giving you a flawless, realistic finish.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-wallet"></i>
+      <h3>Affordable Luxury</h3>
+      <p>Experience premium hair without breaking the bank.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-shipping-fast"></i>
+      <h3>Fast Delivery</h3>
+      <p>Your new look arrives quickly and on time.</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>"Absolutely love my new wig! Feels so natural and high-quality."</p>
+      <h4>- Aisha M.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Fast delivery and amazing customer service. Highly recommend!"</p>
+      <h4>- Thandi R.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Affordable luxury that actually feels luxurious. Will buy again."</p>
+      <h4>- Lindiwe K.</h4>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <h2>Subscribe for Exclusive Offers</h2>
+  <p>Stay updated with new arrivals & discounts.</p>
+  <form>
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Her Royal Choice | Luxury Hair</p>
+  <div class="socials">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-pinterest"></i></a>
+  </div>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('.category-btn');
+const products = document.querySelectorAll('.product');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.category;
+    products.forEach(p => {
+      p.style.display = (cat === 'all' || p.dataset.category === cat) ? 'block' : 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
